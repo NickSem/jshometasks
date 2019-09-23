@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let tagType = prompt("input tag type");
+      if (tagType == "img") {
+        let tagContent = prompt("input image url");
+        document.write("<" + tagType + ' src="' + tagContent + '"' + "/>");
+      } else {
+        let tagContent = prompt("input tag content");
+        document.write("<" + tagType + ">" + tagContent + "</" + tagType + ">");
+      }
+    </script>
+  </body>
+</html>
