@@ -1,21 +1,17 @@
-let html = document.body;
-let colors = [];
-
-for (let i = 0; i < 128; i++) {
-  function rgb() {
-    return Math.round(Math.random() * 255);
+function rgb() {
+  let color = "";
+  for (let i = 0; i < 3; i++) {
+    color += `${Math.round(Math.random() * 255)},`;
   }
-  let r = rgb();
-  let g = rgb();
-  let b = rgb();
-  let color = r + "," + g + "," + b;
-  if (
-    colors.some(function(e) {
-      return e == color;
-    }) == false
-  ) {
-    colors[i] = color;
-    html.innerHTML += `<div style="background-color: rgb(${color})"></div>`;
+  return color.slice(0, color.length - 2);
+}
+
+const colors = [];
+for (let i = 0; i < 128; i++) {
+  let color = rgb();
+  if (!colors.some(e => e == color)) {
+    colors.push(color);
+    document.body.innerHTML += `<div style="background-color: rgb(${color})"></div>`;
   } else {
     break;
   }
